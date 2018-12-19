@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%load staticfiles%}
+
+{%block metadescription%}
+We have comfy cushions
+{% endblock %}
+
+
+{% block title %}
+Search - perfectcushion Store
+{% endblock%}
+
+{%block content %}
+  <div>
+    <p class="text-center my_search_text">You have searched for: <b> "{{query}}"</p>
+  </div>
+
+
+
+
+      <div class="container">
+        <div class="row mx-auto">
+          {% for product in products %}
+
+
+            <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-md-12 col-lg-4">
+              <div class="card" style="min-width:18rem;">
+                <a href="{{product.get_url}}"><img class = 'card-img-top my_image' src="{{product.image.url}}" alt="{{product.name}}">m</a>
+                <div class="card-body">
+                  <h4>{{product.name}}</h4>
+                  <p>${{Product.price}}</p>
+
+                </div>
+              </div>
+            </div>
+            {% empty %}
+            <div class="row mx-auto">
+              <a class="text-center my_search_text">0 results found</a>
+            </div>
+          {%endfor%}
+        </div>
+{% endblock%}
+
+        
