@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'shop',
     'search_app',
     'cart',
-    #'stripe',
+    'stripe',
     #'order',
     #'crispy_forms',
 ]
@@ -70,6 +70,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'shop.context_processors.menu_links',
                 'cart.context_processors.counter',
+
+
             ],
         },
     },
@@ -160,6 +162,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'order.apps.OrderConfig',
     'cart.apps.CartConfig',
     'shop.apps.ShopConfig',
     'search_app.apps.SearchAppConfig',
@@ -169,6 +172,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 
 
 
@@ -262,3 +266,6 @@ STATICFILES_DIRS = (
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media/')
 '''
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_c7f0u6rD9gA3vY9oQUOwRgWG'
+STRIPE_SECRET_KEY = 'sk_test_paXN9Pj6Scp9SM3WXMca7qt7'

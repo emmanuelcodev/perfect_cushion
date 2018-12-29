@@ -8,7 +8,7 @@ class Cart(models.Model):
     date_added = models.DateField(auto_now_add=True)
 
     class Meta:
-        db_table = ('cart',)
+        db_table = 'Cart'
         ordering = ['date_added']
 
     def __str__(self):
@@ -28,5 +28,7 @@ class CartItem(models.Model):
     class Meta:
         db_table = 'CartItem'
 
-        def __str__(self):
-            return self.product
+    def __str__(self):
+        return self.product
+    def print_something(self):
+        print('something')
